@@ -1,6 +1,7 @@
 package com.eventoapp.models;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,6 +22,7 @@ public class Evento implements Serializable {
 	private String data;
 	private String horario;
 	
+	private List<Convidado> convidado;
 	
 	public long getCodigo() {
 		return codigo;
