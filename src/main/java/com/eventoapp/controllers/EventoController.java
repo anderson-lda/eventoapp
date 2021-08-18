@@ -62,7 +62,8 @@ public class EventoController {
 	}
 	
 	@RequestMapping(value="/{codigo}", method=RequestMethod.POST)
-	public String detalhesEventoPost(@PathVariable("codigo") long codigo,@Valid Convidado convidado, BindingResult result, RedirectAttributes attributes) {
+	public String detalhesEventoPost(@PathVariable("codigo") long codigo,@Valid Convidado convidado, 
+			BindingResult result, RedirectAttributes attributes) {
 		if(result.hasErrors()) {
 			attributes.addFlashAttribute("mensagem", "Verifique os campos!");
 			return "redirect:/{codigo}";
