@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Evento implements Serializable {
@@ -17,10 +19,17 @@ public class Evento implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long codigo;
-	
+	@NotNull (message = "Campo não estar vazio")
+	@Size(min=2, max=100, message="Tem de ter pelo menos 2 letras") 
 	private String nome;
+	@NotNull (message = "Campo não estar vazio")
+	@Size(min=2, max=100, message="Tem de ter pelo menos 2 letras") 
 	private String local;
+	@NotNull (message = "Campo não estar vazio")
+	@Size(min=2, max=100, message="Tem de ter pelo menos 2 letras") 
 	private String data;
+	@NotNull (message = "Campo não estar vazio")
+	@Size(min=2, max=100, message="Tem de ter pelo menos 2 letras") 
 	private String horario;
 	
 	@OneToMany
